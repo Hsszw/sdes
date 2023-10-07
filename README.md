@@ -11,7 +11,19 @@
 ![image](https://github.com/Hsszw/sdes/assets/147220550/43bc4798-09b9-4d52-8c5d-715c54bd8f6e)  
 解密测试：  
 ![image](https://github.com/Hsszw/sdes/assets/147220550/5517617b-e5d8-4b7e-b8bf-83fba857671d)  
-通过以上测试显示加解密对应的明、密文正确。
+通过以上测试显示加解密对应的明、密文正确。  
+**第二关交叉测试：**  
+参考其他小组的  
+明文：10101010  
+密钥：1111100000  
+密文：00011011  
+他们的结果是这样：  
+![image](https://github.com/Hsszw/sdes/assets/147220550/ddc06a60-e358-45a3-b42c-f95017e5ae34)  
+我们的结果是这样：  
+![image](https://github.com/Hsszw/sdes/assets/147220550/80538d0a-de98-47bf-8782-1046e57ea6e0)  
+
+
+
 
 
 
