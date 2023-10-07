@@ -21,6 +21,37 @@
 ![image](https://github.com/Hsszw/sdes/assets/147220550/ddc06a60-e358-45a3-b42c-f95017e5ae34)  
 我们的结果是这样：  
 ![image](https://github.com/Hsszw/sdes/assets/147220550/80538d0a-de98-47bf-8782-1046e57ea6e0)  
+**第三关：拓展功能**  
+在交互页面我们可以选择ASCII码  
+加密：  
+![image](https://github.com/Hsszw/sdes/assets/147220550/8b308a8c-8e34-49dd-ab8b-6911cd3bb6f9)  
+在通过选择ASCII码解密我们可以得到：  
+![image](https://github.com/Hsszw/sdes/assets/147220550/8c5b6519-736c-4e89-b58f-9e443b4b03f2)  
+**第四关：暴力破解**  
+对于已经找到的明文和密文对，我们使用多线程的暴力破解方式：  
+明文：10101010  
+密文：11000001  
+![image](https://github.com/Hsszw/sdes/assets/147220550/96d53dbb-00d9-4f6b-8707-1c87bfe5141d)  
+我们采用多线程的破解方式寻找该明、密文对的正确密钥：  
+
+![image](https://github.com/Hsszw/sdes/assets/147220550/674e6466-1385-4521-9936-4b51f2699ddb)  
+通过暴力破解的方式得出，该明、密文对的密钥有两个：  
+![image](https://github.com/Hsszw/sdes/assets/147220550/b59cf0c7-e65e-44fb-852d-692f5fe63cd6)  
+密钥：0110000110  
+密钥：1110000010  
+时间：18ms  
+而经过使用加密得出结果对比  
+![image](https://github.com/Hsszw/sdes/assets/147220550/64066422-298c-444b-972c-c17b05b31ab6)  
+![image](https://github.com/Hsszw/sdes/assets/147220550/51cfd476-f060-46d5-b654-6b510fa90e1a)  
+经过匹配测试我们发现，这两个密钥确实为该明、密文对的正确密钥，说明该暴力破解成功。  
+**第五关：封闭测试**  
+
+
+
+
+
+
+
 
 
 
