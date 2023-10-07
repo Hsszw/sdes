@@ -97,12 +97,46 @@ public class SDES_GUI extends JFrame {
                     int plaintext = Integer.parseInt(input, 2);
                     int keyInt = Integer.parseInt(key, 2);
                     int Bciphertext = SDES.encrypt(plaintext, keyInt);
-                    outputText.setText(Integer.toBinaryString(Bciphertext));
+                    outputText.setText(String.format("%8s", Integer.toBinaryString(Bciphertext)).replace(' ', '0'));
                 }
 
 
             }
         });
+
+        decryptButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String input = inputText.getText();
+                String key = keyText.getText();
+
+                if (key.length() != 10) {
+                    JOptionPane.showMessageDialog(null, "请输入正确的密钥！", "错误", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                StringBuilder plaintext = new StringBuilder();
+                boolean isASCII = asciiButton.isSelected();
+                if (isASCII) {
+                    for (int i = 0; i < input.length(); i++) {
+                        char c = input.charAt(i);
+                        int ciphertext = (int) c;
+                        int keyInt = Integer.parseInt(key, 2);
+                        int decrypted = SDES.decrypt(ciphertext, keyInt);
+                        plaintext.append((char) decrypted);
+                        outputText.setText(plaintext.toString());
+                    }
+                } else {
+                    int ciphertext = Integer.parseInt(input, 2);
+                    int keyInt = Integer.parseInt(key, 2);
+                    int Bplaintext = SDES.decrypt(ciphertext, keyInt);
+                    outputText.setText(String.format("%8s", Integer.toBinaryString(Bplaintext)).replace(' ', '0'));
+                }
+
+
+            }
+        });
+
 
         decryptButton.addActionListener(new ActionListener() {
             @Override
